@@ -18,15 +18,11 @@ export default class Laser extends GameObject {
       this.destroy = true;
     }
 
-    let temp = objects.head;
-    while (temp) {
-      const obj = temp.value;
+    objects.forEach(obj => {
       if (obj.tag === "meteor" && this.collision(obj)) {
         this.destroy = true;
         obj.respawn(model);
-        break;
       }
-      temp = temp.next;
-    }
+    });
   }
 }

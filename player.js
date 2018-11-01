@@ -57,13 +57,10 @@ export default class Player extends GameObject {
 
   checkCollisions(model) {
     const { objects } = model;
-    let temp = objects.head;
-    while (temp) {
-      const obj = temp.value;
+    objects.forEach(obj => {
       if (obj.tag === "meteor" && this.collision(obj)) {
         obj.respawn(model);
       }
-      temp = temp.next;
-    }
+    });
   }
 }
