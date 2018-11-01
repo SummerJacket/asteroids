@@ -30,7 +30,7 @@ export default class Meteor extends GameObject {
     model.score++;
 
     const particles = array(randRange(20, 30)).map(
-      _ => new TinyMeteor(this.x, this.y, "images/meteorBrown_tiny1.png")
+      () => new TinyMeteor(this.x, this.y, "images/meteorBrown_tiny1.png")
     );
 
     objects.addToHead(...particles);

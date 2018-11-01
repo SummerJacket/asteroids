@@ -1,4 +1,4 @@
-import { remove, distance } from "./utils.js";
+import { distance } from "./utils.js";
 
 export default class GameObject {
   constructor(x, y, imgPath) {

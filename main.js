@@ -12,7 +12,7 @@ model.score = 0;
 model.keyboard = {};
 model.objects = new LinkedList(
   new Player(100, 100, "images/playerShip1_blue.png"),
-  ...array(12).map(_ => {
+  ...array(12).map(() => {
     const x = randRange(0, model.canvas.width);
     const y = randRange(0, model.canvas.height);
     const image = choose([
