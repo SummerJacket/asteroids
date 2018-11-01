@@ -6,7 +6,7 @@ import { array, choose, randRange } from "./utils.js";
 const model = {};
 
 model.canvas = document.querySelector("canvas");
-model.ctx = model.canvas.getContext("2d");
+model.ctx = model.canvas.getContext("2d", { alpha: false });
 model.shakeTime = 0;
 model.score = 0;
 model.keyboard = {};

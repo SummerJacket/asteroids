@@ -28,11 +28,11 @@ export default class GameObject {
 
   draw(ctx) {
     ctx.save();
-    ctx.translate(this.x, this.y);
+    ctx.translate(Math.trunc(this.x), Math.trunc(this.y));
     ctx.rotate(this.direction);
 
-    const centerX = this.img.width / 2;
-    const centerY = this.img.height / 2;
+    const centerX = Math.trunc(this.img.width / 2);
+    const centerY = Math.trunc(this.img.height / 2);
     ctx.globalAlpha = this.opacity;
     ctx.drawImage(this.img, -centerX, -centerY);
 
