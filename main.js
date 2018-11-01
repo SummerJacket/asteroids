@@ -11,22 +11,20 @@ model.shakeTime = 0;
 model.score = 0;
 model.keyboard = {};
 model.objects = new LinkedList(
-  ...[
-    new Player(100, 100, "images/playerShip1_blue.png"),
-    ...array(12).map(_ => {
-      const x = randRange(0, model.canvas.width);
-      const y = randRange(0, model.canvas.height);
-      const image = choose([
-        "images/meteorBrown_big1.png",
-        "images/meteorBrown_big2.png",
-        "images/meteorBrown_big3.png",
-        "images/meteorBrown_big4.png",
-        "images/meteorBrown_med1.png",
-        "images/meteorBrown_med3.png"
-      ]);
-      return new Meteor(x, y, image);
-    })
-  ]
+  new Player(100, 100, "images/playerShip1_blue.png"),
+  ...array(12).map(_ => {
+    const x = randRange(0, model.canvas.width);
+    const y = randRange(0, model.canvas.height);
+    const image = choose([
+      "images/meteorBrown_big1.png",
+      "images/meteorBrown_big2.png",
+      "images/meteorBrown_big3.png",
+      "images/meteorBrown_big4.png",
+      "images/meteorBrown_med1.png",
+      "images/meteorBrown_med3.png"
+    ]);
+    return new Meteor(x, y, image);
+  })
 );
 
 const { canvas, ctx, keyboard, objects } = model;
