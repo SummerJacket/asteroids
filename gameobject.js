@@ -22,7 +22,7 @@ export default class GameObject {
 
   lateUpdate(objects) {
     if (this.destroy) {
-      remove(this, objects);
+      objects.remove(this);
     }
   }
 

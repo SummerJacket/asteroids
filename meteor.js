@@ -33,7 +33,7 @@ export default class Meteor extends GameObject {
       _ => new TinyMeteor(this.x, this.y, "images/meteorBrown_tiny1.png")
     );
 
-    objects.push(...particles);
+    objects.addToHead(...particles);
 
     if (Math.random() > 0.5) {
       this.x = randRange(-PADDING, canvas.width + PADDING);

@@ -52,17 +52,18 @@ export default class Player extends GameObject {
     laser.direction = this.direction + randRange(-0.1, 0.1);
     laser.vx = Math.cos(laser.direction) * laser.speed;
     laser.vy = Math.sin(laser.direction) * laser.speed;
-    objects.push(laser);
+    objects.addToHead(laser);
   }
 
   checkCollisions(model) {
     const { objects } = model;
-    const meteors = objects.filter(x => x.tag === "meteor");
-    meteors.some(meteor => {
-      if (this.collision(meteor)) {
-        meteor.respawn(model);
-        return true;
+    let temp = objects.head;
+    while (temp) {
+      const obj = temp.value;
+      if (obj.tag === "meteor" && this.collision(obj)) {
+        obj.respawn(model);
       }
-    });
+      temp = temp.next;
+    }
   }
 }
