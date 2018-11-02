@@ -17,7 +17,7 @@ export default class GameObject {
   start() {}
 
   update() {
-    throw new Error("Update method must be overloaded");
+    throw new Error("Must override update method");
   }
 
   lateUpdate(objects) {
