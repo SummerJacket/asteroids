@@ -39,7 +39,7 @@ const update = () => {
   ctx.save();
   if (model.shakeTime) {
     model.shakeTime--;
-    ctx.translate(randRange(-5, 5), randRange(-5, 5));
+    ctx.translate(Math.trunc(randRange(-5, 5)), Math.trunc(randRange(-5, 5)));
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   objects.forEach(obj => {
